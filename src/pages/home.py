@@ -1,10 +1,15 @@
-"""Home page shown when the user enters the application"""
+# -*- coding:utf-8 -*-
+"""
+:Date: 2023-02-18 23:39:47
+:LastEditTime: 2023-02-18 23:41:34
+:Description: Home page shown when the user enters the application
+"""
+
 import streamlit as st
 
-
 def write():
-    st.write("# Welcome to Lucas analysis! 👋")
-    st.sidebar.success("Select a demo above.")
+    st.title("Welcome to MtBuller! 👋")
+
     st.write(
         """        
         This is an app built specifically for Machine Learning and Data Science projects with streamlit.

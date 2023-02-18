@@ -21,3 +21,4 @@ opencv-contrib-python-headless
 grad-cam
 clip
 keras
+streamlit_option_menu
