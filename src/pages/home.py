@@ -6,9 +6,10 @@
 """
 
 import streamlit as st
+import src.utils.st_components as st_components
 
 def write():
-    st.title("Welcome to MtBuller! 👋")
+    st.title("Welcome to MtBuller!")
 
     st.write(
         """        
@@ -27,6 +28,4 @@ def write():
         
         """
     )
-    # st.shared.components.video_youtube(
-    #         src="https://www.youtube.com/embed/B2iAodr0fOo"
-    #     )
+    st_components.video_youtube('https://www.youtube.com/embed/B2iAodr0fOo')

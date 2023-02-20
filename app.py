@@ -4,27 +4,32 @@
 :LastEditTime: 2023-02-18 23:44:52
 :Description: 
 """
+import PIL
 import streamlit as st
-
+import src.pages.doc
 import src.pages.home
 import src.pages.resources
 import src.pages.data_analysis
 import src.pages.model_analysis
-import PIL
 import streamlit as st
 from streamlit_option_menu import option_menu
+import sweetviz
 
 # Page Favicon
 favicon = PIL.Image.open('src/assets/favicon.png')
 st.set_page_config(page_title='MtBuller', page_icon=favicon, layout='wide', initial_sidebar_state='auto')
-def main():
 
+def main():
+    # Page Title
+    # Bootstrap Icons: https://icons.getbootstrap.com/
     apps = [
         {"func": src.pages.home, "title": "Home", "icon": "house"},
-        {"func": src.pages.resources, "title": "Resources", "icon": "book"},
+        {"func": src.pages.resources, "title": "Resources", "icon": "grid"},
         {"func": src.pages.data_analysis, "title": "Data Analysis", "icon": "bar-chart-line"},
         {"func": src.pages.model_analysis, "title": "Model Analysis", "icon": "pie-chart"},
+        {"func": src.pages.doc, "title": "Docs", "icon": "book"},
     ]
+    
 
     titles = [app["title"] for app in apps]
     titles_lower = [title.lower() for title in titles]
@@ -39,23 +44,23 @@ def main():
 
     with st.sidebar:
         selected = option_menu(
-            "Main Menu",
+            "MtBuller",
             options=titles,
             icons=icons,
-            menu_icon="cast",
+            menu_icon="box",
             default_index=default_index,
-            # styles={
-            # "container": {"padding": "5!important", "background-color": "#fafafa"},
-            # "icon": {"color": "orange", "font-size": "25px"}, 
-            # "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-            # "nav-link-selected": {"background-color": "#24A608"}
-            # }
+            styles={
+            "container": {"padding": "5!important", "background-color": "#fafafa"},
+            "icon": {"color": "orange", "font-size": "20px"}, 
+            "nav-link": {"font-size": "17px", "text-align": "left", "margin":"2px", "--hover-color": "#eee"},
+            "nav-link-selected": {"background-color": "#24A608"}
+            }
         )
 
     st.sidebar.title("About")
     st.sidebar.info(
         """
-        This web [app](https://share.streamlit.io/giswqs/streamlit-template) is maintained by [MtBuler](https://github.com/cyclopes2022). You can follow me on social media:
+        This web [app](https://share.streamlit.io/giswqs/streamlit-template) is maintained by [MtBuler](https://github.com/cyclopes2022). You can follow me on community:
             [GitHub](https://github.com/cyclopes2022).
         
         Source code: <https://github.com/cyclopes2022/MtBuller>
