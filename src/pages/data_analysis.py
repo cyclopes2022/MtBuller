@@ -66,9 +66,9 @@ def write():
         st.subheader('Overview') 
 
     with tab_opendata:
-        # if "visibility" not in st.session_state:
-        #     st.session_state.visibility = "visible"
-        #     st.session_state.disabled = False
+        if "visibility" not in st.session_state:
+            st.session_state.visibility = "visible"
+            st.session_state.disabled = False
 
         col1, col2 = st.columns(2)
         
