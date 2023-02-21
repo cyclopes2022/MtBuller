@@ -22,4 +22,4 @@ grad-cam
 clip
 keras
 streamlit_option_menu
-sweetviz
+fiftyone
